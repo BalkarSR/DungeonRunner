@@ -62,8 +62,13 @@
   <ItemGroup>
     <Compile Include="Assets\Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Assets\Scripts\Enemy\Moss_Giant.cs" />
+    <Compile Include="Assets\Assets\Scripts\IDamageable.cs" />
     <Compile Include="Assets\Assets\Scripts\Player\Animation_Player.cs" />
+    <Compile Include="Assets\Assets\Scripts\Player\Attack.cs" />
     <Compile Include="Assets\Assets\Scripts\Player\Player.cs" />
+    <Reference Include="Cinemachine">
+      <HintPath>/Users/balkarrana/Dungeon Runner/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/balkarrana/Dungeon Runner/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -73,17 +78,14 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>/Users/balkarrana/Dungeon Runner/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>/Users/balkarrana/Dungeon Runner/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>/Users/balkarrana/Dungeon Runner/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>/Users/balkarrana/Dungeon Runner/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>/Users/balkarrana/Dungeon Runner/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>/Users/balkarrana/Dungeon Runner/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

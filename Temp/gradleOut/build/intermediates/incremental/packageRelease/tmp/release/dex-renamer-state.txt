@@ -1,0 +1,4 @@
+#Fri Apr 05 12:35:49 EDT 2019
+base.0=/Users/balkarrana/Dungeon Runner/Temp/gradleOut/build/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex

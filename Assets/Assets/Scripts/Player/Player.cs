@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     //get a reference to the rigibody
     private Rigidbody2D playerRigid;
+
+    //hp for the player
+    public int hp { get; set; }
 
     //bool to check if we need to reset the jump or not
     private bool resetJump = false;
@@ -52,6 +56,9 @@ public class Player : MonoBehaviour
         //refer to 1st index in the array of Player objects, Sprite is 0, Sword_Arc is 1
         swordArcRenderer = transform.GetChild(1).GetComponent<SpriteRenderer>();
         swordArcTransform = transform.GetChild(1).GetComponent<Transform>();
+        
+        //set hp to 4
+        hp = 4;
     }
 
     // Update is called once per frame
@@ -61,17 +68,41 @@ public class Player : MonoBehaviour
         PlayerMovement();
 
         //if left mouse button is clicked, and player is on the ground then attack
-        if(Input.GetMouseButtonDown(0) && ONGround())
+        if(CrossPlatformInputManager.GetButtonDown("A_Button") && ONGround())
         {
             animation_Player.Attack();
         }
+    }
+
+    //damage method
+    public void Damage()
+    {
+        //if player is dead, then do nothing
+        if(hp < 1) { return; }
+
+        //when player is hit, remove 1 hp
+        hp--;
+
+        //update UI display
+        UIManager.GetUIManager.UpdateHealthBars(hp);
+        //check if player is dead
+
+        //player is dead
+        if(hp < 1)
+        {
+            //call death function to play 
+            animation_Player.Death();
+            playerSpeed = 0.0f;
+        }
+
+
     }
 
     //Player horizontal movements & jump
     void PlayerMovement()
     {
         //Horizontal input for going left or right
-        float xInput = Input.GetAxisRaw("Horizontal");
+        float xInput = CrossPlatformInputManager.GetAxis("Horizontal");
 
         //so it calls ONGround method every frame
         grounded = ONGround();
@@ -80,7 +111,7 @@ public class Player : MonoBehaviour
         Flip(xInput);
 
         //In order to jump, check if space is pressed and check if the player is on the ground
-        if (Input.GetKeyDown(KeyCode.Space) && ONGround())
+        if ((CrossPlatformInputManager.GetButtonDown("B_Button") || Input.GetKeyDown("space")) && ONGround())
         {
             Debug.Log("Jumped!");
 

@@ -17,8 +17,6 @@ public class Moss_Giant : Enemy, IDamageable
 
         //set the current hp to whatever the base class is
         this.hp = base.hp;
-
-
     }
 
     public void Damage()
@@ -38,9 +36,17 @@ public class Moss_Giant : Enemy, IDamageable
         //if hp is less than 1 it means it has 0 hp
         if(hp < 1)
         {
-            //destroy the enemy
-            Destroy(this.gameObject);
+            isDead = true;
+            animator.SetTrigger("Death");
+
+            //reduce the count of enemies killed by 1
+            enemies_alive--;
+            Debug.Log("Enemies remaining are " + enemies_alive);
         }
     }
 
+    public override void Movement()
+    {
+        base.Movement();
+    }
 }

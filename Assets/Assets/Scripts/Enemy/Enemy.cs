@@ -7,6 +7,9 @@ public abstract class Enemy : MonoBehaviour
     //Create a vector3 object to get current Target positions
     public Vector3 targetLoc;
 
+    //track of total # of enemies alive
+    public int enemies_alive = 5;
+
     //to see if enemy is hit
     public bool isHit = false;
 
@@ -25,6 +28,9 @@ public abstract class Enemy : MonoBehaviour
     //variable to store the player
     public Player player;
 
+    //to keep track of when the enemy is dead
+    public bool isDead = false;
+
     //to start and initalize the objects
     public void Start()
     {
@@ -41,7 +47,12 @@ public abstract class Enemy : MonoBehaviour
         }
 
         //call the movement for all enemies
-        Movement();
+        //if isDead is false then move, otherwise don't
+        if(isDead == false)
+        {
+            Movement();
+        }
+
     }
 
     public virtual void Movement()
@@ -86,16 +97,32 @@ public abstract class Enemy : MonoBehaviour
         }
 
         //check for distance between player and enemy
-        //store distance
+        //store distance, //get the position of the player
         float distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
-        //if greater than 2 units, isHit = false and inCombt = false
-        if (distance > 2.0f)
+        //if greater than 2 units, isHit = false and inCombt = false, or player is dead
+        if (distance > 2.0f || player.hp < 1)
         {
             isHit = false;
             animator.SetBool("InCombat", false);
         }
 
-        
+
+        //---------- enemy flips when attacking to whatever side the player is on
+
+        //get the moss giant's position and sub from player to see which side he's on
+        Vector3 direction = player.transform.localPosition - transform.localPosition;
+
+        //face right if direction is > 0 and is in Combat
+        if (direction.x > 0 && animator.GetBool("InCombat") == true)
+        {
+            //flip to the face right side
+            spriteRenderer.flipX = false;
+        }
+        else if (direction.x < 0 && animator.GetBool("InCombat") == true)
+        {
+            //flip to face left side   
+            spriteRenderer.flipX = true;
+        }
 
     }
 

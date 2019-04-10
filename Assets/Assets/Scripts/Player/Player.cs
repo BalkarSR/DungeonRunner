@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -93,9 +95,17 @@ public class Player : MonoBehaviour, IDamageable
             //call death function to play 
             animation_Player.Death();
             playerSpeed = 0.0f;
+            StartCoroutine(DoChangeScene(0, 3f));
         }
 
 
+    }
+
+    //wait before changing scene
+    IEnumerator DoChangeScene(int sceneToChangeTo, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneToChangeTo);
     }
 
     //Player horizontal movements & jump

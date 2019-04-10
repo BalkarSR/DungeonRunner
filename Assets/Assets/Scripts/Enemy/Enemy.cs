@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public abstract class Enemy : MonoBehaviour
     public Vector3 targetLoc;
 
     //track of total # of enemies alive
+    [SerializeField]
     public int enemies_alive = 5;
 
     //to see if enemy is hit
@@ -28,6 +30,9 @@ public abstract class Enemy : MonoBehaviour
     //variable to store the player
     public Player player;
 
+    //get reference to the chest
+    public Chest chest;
+
     //to keep track of when the enemy is dead
     public bool isDead = false;
 
@@ -35,6 +40,15 @@ public abstract class Enemy : MonoBehaviour
     public void Start()
     {
         Init();
+    }
+
+    public void checkWin()
+    {
+        if (enemies_alive < 1 && chest.isOpen)
+        {
+            //load winning screen scene
+            SceneManager.LoadScene(2);
+        }
     }
 
     //to ensure every enemy we create in the future can include this method
@@ -52,6 +66,9 @@ public abstract class Enemy : MonoBehaviour
         {
             Movement();
         }
+
+        //keep checking if the player won
+        checkWin();
 
     }
 

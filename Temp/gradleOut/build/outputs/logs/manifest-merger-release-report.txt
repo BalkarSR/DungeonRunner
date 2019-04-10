@@ -52,15 +52,15 @@ ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManif
 activity#com.unity3d.player.UnityPlayerActivity
 ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:5-12:16
 	android:screenOrientation
-		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:102-140
+		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:102-146
 	android:label
 		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:69-101
 	android:launchMode
-		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:141-172
+		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:147-178
 	android:hardwareAccelerated
-		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:355-390
+		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:361-396
 	android:configChanges
-		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:173-354
+		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:179-360
 	android:name
 		ADDED from /Users/balkarrana/Dungeon Runner/Temp/gradleOut/src/main/AndroidManifest.xml:5:15-68
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:android.intent.category.LEANBACK_LAUNCHER

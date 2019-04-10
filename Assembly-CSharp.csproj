@@ -61,11 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Assets\Scripts\Attack.cs" />
+    <Compile Include="Assets\Assets\Scripts\Chest.cs" />
     <Compile Include="Assets\Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Assets\Scripts\Enemy\Moss_Giant.cs" />
     <Compile Include="Assets\Assets\Scripts\Enemy\Spikes.cs" />
     <Compile Include="Assets\Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Assets\Scripts\IDamageable.cs" />
+    <Compile Include="Assets\Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Assets\Scripts\Player\Animation_Player.cs" />
     <Compile Include="Assets\Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Assets\Scripts\UI\UIManager.cs" />

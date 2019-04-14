@@ -29,10 +29,7 @@ public abstract class Enemy : MonoBehaviour
 
     //variable to store the player
     public Player player;
-
-    //get reference to the chest
-    public Chest chest;
-
+    
     //to keep track of when the enemy is dead
     public bool isDead = false;
 
@@ -44,9 +41,10 @@ public abstract class Enemy : MonoBehaviour
 
     public void checkWin()
     {
-        if (enemies_alive < 1 && chest.isOpen)
+        if (player.totalEnemiesKilled == 5)
         {
             //load winning screen scene
+            Debug.Log("WON");
             SceneManager.LoadScene(2);
         }
     }

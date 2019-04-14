@@ -38,10 +38,8 @@ public class Moss_Giant : Enemy, IDamageable
         {
             isDead = true;
             animator.SetTrigger("Death");
+            player.totalEnemiesKilled += 1;
 
-            //reduce the count of enemies killed by 1
-            enemies_alive--;
-            Debug.Log("Enemies remaining are " + enemies_alive);
         }
     }
 

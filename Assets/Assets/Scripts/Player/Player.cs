@@ -10,7 +10,6 @@ public class Player : MonoBehaviour, IDamageable
     //get a reference to the rigibody
     private Rigidbody2D playerRigid;
 
-    //hp for the player
     public int hp { get; set; }
 
     //bool to check if we need to reset the jump or not
@@ -19,6 +18,10 @@ public class Player : MonoBehaviour, IDamageable
     //the y axis values for jumping
     [SerializeField]
     private float jumpValue = 5.0f;
+
+    [SerializeField]
+    //track of how many enemies killed
+    public int totalEnemiesKilled = 0;
 
     //player speed
     [SerializeField]

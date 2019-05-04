@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-/Users/balkarrana/Google Drive/Game/Demo.apk
+/Users/balkarrana/Desktop/Assignment1
 SceneListBegin?
 Assets/Assets/_Scenes/MainMenu.unity
 Assets/Assets/_Scenes/Game.unity
